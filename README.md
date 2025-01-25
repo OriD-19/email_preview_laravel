@@ -2,3 +2,14 @@
 
 # Práctica 1 Desarrollo Backend 2025
 Proyecto por Fernando Fuentes
+
+## Requisitos y especificaciones
+1. PHP Versión 8.4
+2. Composer Versión 2.8.5
+3. Laravel Versión 11
+4. Desarrollado en stack WAMP (Windows, Apache, MySQL y PHP) con Laragon
+
+## Pasos para ejecutar el proyecto
+1. Clonar el repositorio y hacer un `cd` al directorio
+2. Ejecutar el comando `composer install`
+3. Ejecutar el comando `php artisan serve`
