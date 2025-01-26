@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 enum PaymentMethod: int {
     case Transferencia = 1;
@@ -17,19 +18,15 @@ class PreviewEmailController extends Controller
 
     public static $orderCounter = 1;
 
-    public function show(Request $req): View {
+    public function show(Request $req): View | Redirect {
 
         // validación y obtención de los datos
 
-        $validated = $req->validate([
+        $req->validate([
             'customer' => ['required'],
             'email' => ['required', 'email'],
             'payment_method' => ['required', 'integer', 'between:1,3'],
             'products' => ['required', 'min:1'],
-        ]);
-
-        $req->validate([
-            // validar cada elemento dentro del arreglo con la sintaxis *
             'products.*.name' => ['required', 'max:50'],
             'products.*.price' => ['required', 'numeric', 'gt:0'],
             'products.*.quantity' => ['required', 'gte:1'],

@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        // Desactivar validación CSRF para la ruta especificada
+        $middleware->validateCsrfTokens(except: [
+            '/api/v1/email/preview'
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
