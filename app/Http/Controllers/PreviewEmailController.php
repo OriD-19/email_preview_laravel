@@ -18,7 +18,7 @@ class PreviewEmailController extends Controller
 
     public static $orderCounter = 1;
 
-    public function show(Request $req): View | Redirect {
+    public function show(Request $req): View  {
 
         // validación y obtención de los datos
 
