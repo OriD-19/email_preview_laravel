@@ -12,4 +12,5 @@ Proyecto por Fernando Fuentes
 ## Pasos para ejecutar el proyecto
 1. Clonar el repositorio y hacer un `cd` al directorio
 2. Ejecutar el comando `composer install`
-3. Ejecutar el comando `php artisan serve`
+3. Crear un archivo `.env` en la raiz del directorio (copiar y pegar la información en el archivo `.env.example` para utilizar valores predeterminados)
+4. Ejecutar el comando `php artisan serve`
