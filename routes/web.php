@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::post('/api/v1/email/preview', [PreviewEmailController::class, 'show']);
+Route::get('/api/v1/email/preview', [PreviewEmailController::class, 'show']);
