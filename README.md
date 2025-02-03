@@ -1,9 +1,11 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-# Práctica 1 Desarrollo Backend 2025
+# Práctica 1 y 2 Desarrollo Backend 2025
 El presente proyecto es una API simple para visualizar email de prueba según un pedido de un usuario.
 Sigue los principios REST para la creación de APIs, como el uso de métodos descriptivos, códigos de error
 HTTP semánticos y mejores prácticas impulsadas por el framework Laravel.
+Además, se ha incluido funcionalidad para el registro y la consulta de usuarios ficticios, mediante el uso
+de una base de datos MySQL.
 
 ## Captura de pantalla
 ![Captura de pantalla de la muestra del correo electrónico generado](./screenshots/ss.PNG)
