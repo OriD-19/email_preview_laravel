@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -29,13 +30,7 @@ class UserController extends Controller
             $users->where('email', 'like', '%'. $emailQuery. '%');
         }
 
-        $res = [];
-
-        foreach($users->get() as $user) {
-            array_push($res, UserResource::make($user));
-        }
-
-        return response()->json($res);
+        return response()->json(UserResource::collection($users->get()));
     }
 
     /**
@@ -56,15 +51,18 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return response()->json(UserResource::make($user));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
-        //
+        $data = $request->validated();
+        $user->update($data);
+
+        return $user;
     }
 
     /**
