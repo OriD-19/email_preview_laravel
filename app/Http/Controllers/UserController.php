@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UserPatchRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
@@ -70,6 +70,14 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return response("", 204);
+    }
+
+    public function patch(UserPatchRequest $request, User $user) {
+        $data = $request->validated();
+        $user->update($data);
+
+        return $user;
     }
 }
